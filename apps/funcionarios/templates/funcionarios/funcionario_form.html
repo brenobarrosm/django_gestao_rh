@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Editar Funcionário</h1>
+
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-primary" type="submit">Salvar</button>
+    </form>
+{% endblock main %}
+
