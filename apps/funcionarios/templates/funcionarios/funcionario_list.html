@@ -6,5 +6,7 @@
         <a href="{% url 'delete_funcionario' funcionario.id %}">Excluir</a>
         <br>
     {% endfor %}
+
+    <a href="{% url 'create_funcionario' %}" class="btn btn-primary">Novo</a>
 {% endblock main %}
 
