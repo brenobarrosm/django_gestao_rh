@@ -3,6 +3,7 @@
 {% block main %}
     <h1>Bem-vindo(a), {{ usuario.funcionario.nome }}</h1>
     <a href="{% url 'list_funcionarios' %}">Gerenciar funcionários</a>
+    <a href="{% url 'list_departamentos' %}">Gerenciar departamentos</a>
     <a href="{% url 'logout' %}">Logout</a>
 
     {% if usuario.funcionario.empresa %}
