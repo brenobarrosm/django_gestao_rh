@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
     <h1>Editar Funcionário</h1>
 
     <form method="post" autocomplete="off">
         {% csrf_token %}
-        {{ form }}
+        {{ form|bootstrap }}
         <button class="btn btn-primary" type="submit">Salvar</button>
     </form>
 {% endblock main %}
