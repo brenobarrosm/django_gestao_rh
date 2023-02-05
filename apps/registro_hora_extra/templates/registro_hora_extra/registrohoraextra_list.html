@@ -2,9 +2,9 @@
 
 {% block main %}
     {% for registro_he in object_list %}
-        {{ registro_he }}
-        {% comment %} <a href="{% url 'update_funcionario' funcionario.id %}">{{ funcionario }}</a>
-        <a href="{% url 'delete_funcionario' funcionario.id %}">Excluir</a> {% endcomment %}
+        
+        <a href="{% url 'edit_hora_extra' registro_he.id %}">{{ registro_he.motivo }} - {{ registro_he.horas }}h</a>
+        {% comment %} <a href="{% url 'delete_funcionario' funcionario.id %}">Excluir</a> {% endcomment %}
         <br>
     {% endfor %}
 
