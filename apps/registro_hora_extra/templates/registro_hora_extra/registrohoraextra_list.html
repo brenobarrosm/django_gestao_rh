@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% for registro_he in object_list %}
+        {{ registro_he }}
+        {% comment %} <a href="{% url 'update_funcionario' funcionario.id %}">{{ funcionario }}</a>
+        <a href="{% url 'delete_funcionario' funcionario.id %}">Excluir</a> {% endcomment %}
+        <br>
+    {% endfor %}
+
+    {% comment %} <a href="{% url 'create_funcionario' %}" class="btn btn-primary">Novo</a> {% endcomment %}
+{% endblock main %}
+
