@@ -7,6 +7,10 @@
         {% csrf_token %}
         {{ form|bootstrap }}
         <br>
+        {% if object %}
+            <a class="btn btn-danger"  href="{% url 'delete_hora_extra' object.id %}">Excluir</a>
+        {% endif %}
+        
         <button class="btn btn-primary">Salvar</button>
     </form>
 {% endblock main %}
