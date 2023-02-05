@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+    <h1>Você está certo de que deseja deletar esse registro?</h1>
+    <p>Funcionário: <b>{{ object.funcionario }}</b></p>
+    <p>{{ object.motivo }} - {{ object.horas }} horas</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button class="btn btn-danger" type="submit">Excluir</button>
+    </form>
+{% endblock main %}
+

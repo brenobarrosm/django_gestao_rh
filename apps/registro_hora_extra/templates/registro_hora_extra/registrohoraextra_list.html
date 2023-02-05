@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    {% for registro_he in object_list %}
-        
-        <a href="{% url 'edit_hora_extra' registro_he.id %}">{{ registro_he.motivo }} - {{ registro_he.horas }}h</a>
-        {% comment %} <a href="{% url 'delete_funcionario' funcionario.id %}">Excluir</a> {% endcomment %}
-        <br>
-    {% endfor %}
+
+    {% if not object_list %}
+        <p>Ainda não há registro de horas extras.</p>
+    {% else %}
+        {% for registro_he in object_list %}
+            <a href="{% url 'edit_hora_extra' registro_he.id %}">{{ registro_he.motivo }} - {{ registro_he.horas }}h</a>
+            <a href="{% url 'delete_hora_extra' registro_he.id %}">Excluir</a>
+            <br>
+        {% endfor %}
+    {% endif %}
+    
 
     {% comment %} <a href="{% url 'create_funcionario' %}" class="btn btn-primary">Novo</a> {% endcomment %}
 {% endblock main %}
